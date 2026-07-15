@@ -1,55 +1,125 @@
 # DataPilot AI
 
-DataPilot AI is a three-week SharkStack capstone project for building a transparent, agent-driven AutoML workflow for tabular CSV datasets.
+DataPilot AI is an agent-driven AutoML platform that turns tabular datasets into transparent, reproducible machine-learning workflows. It coordinates specialized agents to inspect data, prepare features, compare models, explain results, generate reports, and serve predictions from a selected model.
 
-The MVP will guide a user through CSV upload, data analysis, preprocessing, model training and comparison, explainability, reporting, downloadable artifacts, and prediction with a saved model. The product prioritizes a stable and understandable end-to-end workflow over advanced MLOps features.
+The platform is designed around a simple principle: automation should accelerate decisions without hiding how those decisions were made. Users can choose between a guided workflow with confirmation points and a fully automatic workflow that runs end to end.
 
-## Team
+## Execution modes
 
-| Member | Primary responsibility |
+| Mode | Behavior | Best suited for |
+| --- | --- | --- |
+| Guided | Pauses at important decisions so the user can confirm the target, problem type, columns, and workflow choices | Learning, review, experimentation, and higher-control analysis |
+| Auto | Allows PilotFlow and the specialist agents to complete the workflow from dataset analysis through model results without manual confirmation | Fast baselines, repeatable analysis, and users who prefer full automation |
+
+Both modes use the same transparent agent activity, stored run state, model comparison, explanations, reports, and prediction workflow. The selected mode changes the level of user involvement, not the visibility of the result.
+
+## Core workflow
+
+1. Upload a tabular CSV dataset.
+2. Review its structure, quality, columns, and candidate target.
+3. Select Guided or Auto execution mode.
+4. Confirm key decisions in Guided mode, or allow Auto mode to proceed end to end.
+5. Follow the agent workflow and its activity in real time.
+6. Compare trained models and select the strongest result.
+7. Review explanations, limitations, metrics, and generated artifacts.
+8. Download a report or submit input to the saved prediction model.
+
+## Agent architecture
+
+| Agent | Responsibility |
 | --- | --- |
-| Rahman Ali | Frontend/UI lead: React, routes, workflow screens, charts, downloads, prediction form, and demo polish |
-| Akbar Hussain | Backend/ML lead: Django APIs, persistence, LangGraph agents, ML pipeline, artifacts, prediction API, and Docker |
-| Both | Integration, pull-request reviews, testing, explainability, mentor demos, documentation, and final rehearsal |
+| PilotFlow | Orchestrates the workflow and coordinates agent execution |
+| DataLens | Profiles the dataset and summarizes data quality |
+| CleanCraft | Builds a reusable preprocessing pipeline |
+| ModelForge | Trains candidate models, compares metrics, and selects the best model |
+| InsightBoard | Produces explanations, report content, and artifact metadata |
 
-## Planned technology
+## Technology
 
-- Frontend: React, Vite, Tailwind CSS, React Router, and a single charting library
-- Backend: Django, Django REST Framework, and SQLite for the MVP
-- Workflow: LangGraph
-- Machine learning: Pandas, NumPy, Scikit-learn, and Joblib
-- Optional explanation providers: Groq, Gemini, or OpenAI behind a rule-based fallback
-- Delivery: Docker support and documented local setup
+### Frontend
 
-## Git workflow
+- React and Vite
+- React Router
+- Tailwind CSS
+- Responsive light and dark themes
 
-- `main` is the stable mentor/demo branch.
-- `dev` is the active integration branch.
-- Each daily task uses a separate `feature/...` or `chore/...` branch created from the latest `dev`.
-- Feature and chore pull requests target `dev` and require review by the other member.
-- `dev` reaches `main` only through a mentor-approved release pull request.
-- Direct pushes and force-pushes to `main` and `dev` are not allowed.
+### Backend and machine learning
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete collaboration process.
+- Django and Django REST Framework
+- SQLite for application persistence
+- LangGraph for workflow orchestration
+- Pandas, NumPy, and Scikit-learn
+- Joblib for pipeline and model persistence
 
-## Planned repository structure
+Optional language-model providers can be integrated behind a provider interface with a deterministic fallback. Docker support will provide a reproducible local environment.
+
+## Repository structure
 
 ```text
 DataPilot_AI_Capstone/
-|-- frontend/              # Rahman-owned React application
-|-- backend/               # Akbar-owned Django, agent, and ML application
-|-- docs/                  # Shared contracts, review notes, and demo material
-|-- .github/               # Pull-request and repository collaboration templates
-|-- CONTRIBUTING.md
-`-- README.md
+|-- frontend/              # React application and frontend documentation
+|-- backend/               # Django APIs, workflow agents, and ML services
+|-- docs/                  # API contracts and shared technical documentation
+|-- .github/               # Pull-request templates and repository configuration
+|-- CONTRIBUTING.md        # Collaboration and review workflow
+`-- README.md              # Platform overview
 ```
 
-## Current status
+## Project status
 
-Repository governance bootstrap. Application implementation has not started.
+| Area | Status |
+| --- | --- |
+| Repository governance and collaboration workflow | Complete |
+| Frontend application foundation | Implemented and under review |
+| Backend application foundation | Planned |
+| Frontend/backend integration | Pending backend APIs |
+| Agent execution and machine-learning pipeline | Planned |
 
-Setup and run commands will be added only after the Day 1 frontend and backend foundations have been implemented and verified.
+The frontend currently provides the application shell, responsive navigation, persistent themes, safe error handling, and directly navigable screens for dataset upload, run progress, results, reports, and prediction. Progress values and agent activity are UI demonstration data until the backend status APIs are connected.
 
-## Security
+## Run the frontend
 
-Never commit API keys, credentials, real environment files, uploaded datasets, local databases, generated models, or reports. Commit only reviewed source code and safe examples such as `.env.example`.
+Requirements: a current Node.js and npm installation.
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Vite will print the local development address after startup.
+
+### Frontend validation
+
+```powershell
+cd frontend
+npm run lint
+npm run build
+```
+
+Frontend-specific architecture, routes, and commands are documented in [`frontend/README.md`](frontend/README.md).
+
+## Collaboration workflow
+
+- `main` contains stable release and demonstration milestones.
+- `dev` is the shared integration branch.
+- Work is completed on focused `feature/...` or `chore/...` branches created from the latest `dev`.
+- Pull requests from feature branches target `dev` and require review.
+- `dev` reaches `main` only through a reviewed release pull request.
+- Direct pushes and force-pushes to `main` and `dev` are not permitted.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for branch naming, commit conventions, validation expectations, reviews, and conflict handling.
+
+## Ownership
+
+| Member | Primary area |
+| --- | --- |
+| Rahman Ali | Frontend architecture, application experience, visualizations, downloads, and prediction interface |
+| Akbar Hussain | Backend APIs, persistence, agent orchestration, ML pipeline, artifacts, prediction service, and containerization |
+| Shared | API contracts, integration, testing, documentation, reviews, and releases |
+
+## Security and generated data
+
+Never commit credentials, API keys, real environment files, uploaded datasets, local databases, generated models, reports, or runtime artifacts. Commit only source code, reviewed configuration, and safe templates such as `.env.example`.
+
+The repository ignore rules protect common Node, Python, environment, database, upload, model, report, cache, IDE, and operating-system files.

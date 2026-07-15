@@ -54,7 +54,7 @@ function WorkflowPreview() {
         <div className="mt-5 grid grid-cols-3 gap-2">
           {[
             ['Input', 'CSV'],
-            ['Mode', 'Guided'],
+            ['Modes', 'Guided / Auto'],
             ['Output', 'Explainable'],
           ].map(([label, value]) => (
             <div className="rounded-xl border border-line bg-surface p-3" key={label}>
@@ -75,13 +75,13 @@ export default function DashboardPage() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-mint-400/20 bg-mint-400/[0.07] px-3 py-1.5 text-xs font-semibold text-mint-400">
             <span className="size-1.5 rounded-full bg-mint-400 shadow-[0_0_9px_#45e6c1]" />
-            Agentic AutoML, made understandable
+            Agentic AutoML · Guided or fully automatic
           </div>
           <h1 className="text-gradient mt-7 max-w-3xl text-5xl leading-[0.98] font-bold tracking-[-0.055em] sm:text-6xl xl:text-7xl">
             Your data.<br />One intelligent flight plan.
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-8 text-muted">
-            DataPilot coordinates specialized AI agents to profile, prepare, train, compare, and explain—while you stay in control of every decision.
+            Choose hands-on guidance or let DataPilot run end to end. Specialized AI agents profile, prepare, train, compare, and explain with every step kept visible.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link className="inline-flex items-center justify-center gap-3 rounded-xl bg-mint-400 px-5 py-3.5 text-sm font-bold text-night-950 shadow-[0_12px_35px_rgb(69_230_193/18%)] transition hover:-translate-y-0.5 hover:bg-[#6aefd0]" to="/upload">
@@ -92,7 +92,7 @@ export default function DashboardPage() {
             </Link>
           </div>
           <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-xs font-medium text-subtle">
-            {['Human-guided', 'Explainable results', 'Reusable pipelines'].map((item) => (
+            {['Guided + Auto modes', 'Explainable results', 'Reusable pipelines'].map((item) => (
               <span className="flex items-center gap-2" key={item}>
                 <svg aria-hidden="true" className="size-4 text-mint-400" fill="none" viewBox="0 0 20 20"><path d="m5 10 3 3 7-7" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" /></svg>
                 {item}

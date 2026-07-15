@@ -18,7 +18,7 @@ export default function AppLayout() {
           <span className="size-1.5 rounded-full bg-mint-400 shadow-[0_0_10px_#45e6c1]" />
           <span>DataPilot AI</span><span className="text-line">/</span><span>Intelligent AutoML workspace</span>
         </div>
-        <p>Built for transparent, human-guided decisions</p>
+        <p>Transparent automation · Guided when you want it</p>
       </footer>
     </div>
   )

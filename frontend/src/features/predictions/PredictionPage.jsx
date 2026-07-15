@@ -10,11 +10,11 @@ export default function PredictionPage() {
       <PageIntro
         description={`Use saved model ${modelId} with the exact feature structure learned during training.`}
         eyebrow="Prediction workspace"
-        status="Schema guided"
+        status="Schema driven"
         title="Move from trained model to useful prediction."
       />
       <PlaceholderPanel
-        description="A guided flow will validate every value before asking the selected model for an outcome."
+        description="A schema-driven flow will validate every value before asking the selected model for an outcome."
         steps={[
           { title: 'Load schema', description: 'Build inputs from the selected model’s saved feature schema.' },
           { title: 'Validate values', description: 'Guide users toward complete and correctly typed input.' },
