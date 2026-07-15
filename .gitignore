@@ -1,0 +1,83 @@
+# Local Codex and agent state
+.agents/
+.codex/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+
+# Node, Vite, and frontend outputs
+node_modules/
+dist/
+build/
+.vite/
+.npm/
+.yarn/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python and Django
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+db.sqlite3
+db.sqlite3-journal
+*.sqlite3
+*.sqlite3-journal
+staticfiles/
+backend/media/
+backend/uploads/
+
+# Generated ML and report artifacts
+/runtime/
+/generated/
+backend/model_artifacts/
+backend/report_artifacts/
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.log
+
+# IDE and editor files
+.idea/
+.vscode/
+*.code-workspace
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
