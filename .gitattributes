@@ -1,0 +1,42 @@
+# Normalize repository text to LF across Windows, macOS, and Linux.
+* text=auto eol=lf
+
+# Windows command files require CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Common text formats.
+*.py text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.txt text eol=lf
+*.sh text eol=lf
+package-lock.json text eol=lf
+
+# Binary formats must never receive line-ending conversion.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.pptx binary
+*.zip binary
+*.gz binary
+*.sqlite3 binary
+*.joblib binary
+*.pkl binary
+*.pickle binary
+*.onnx binary
