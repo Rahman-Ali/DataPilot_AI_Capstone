@@ -1028,7 +1028,7 @@
       }
     ],
     "best_model": "Logistic Regression",
-    "model_id": "34be0776-9045-4214-a9ff-bcc8a0cd0727",
+    "model_id": "8a78643c-f940-42dc-a35c-72dda77ab151",
     "selection_metric": "f1_weighted",
     "cv_folds": 5
   },
@@ -1415,7 +1415,7 @@
     }
   ],
   "best_model": "Logistic Regression",
-  "model_id": "34be0776-9045-4214-a9ff-bcc8a0cd0727",
+  "model_id": "8a78643c-f940-42dc-a35c-72dda77ab151",
   "explanation_method": "LIME",
   "feature_contributions": [
     {

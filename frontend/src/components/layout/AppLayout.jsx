@@ -10,7 +10,7 @@ export default function AppLayout() {
         Skip to content
       </a>
       <Navigation />
-      <main id="main-content" className="relative z-10 mx-auto w-full max-w-[1440px] px-5 py-10 sm:px-8 lg:px-12 lg:py-16">
+      <main id="main-content" className="relative z-10 mx-auto w-full min-w-0 max-w-[1440px] px-5 py-10 sm:px-8 lg:px-12 lg:py-16">
         <Outlet />
       </main>
       <footer className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-col gap-3 border-t border-line px-5 py-7 text-sm text-subtle sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
